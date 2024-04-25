@@ -1,0 +1,79 @@
+id: cis5510
+name: CIS 5510
+description: |
+  This is an introduction to topics in the security of computer systems and communication on networks of computers. 
+  
+  The course covers four major areas: fundamentals of cryptography, security for communication protocols, security for operating systems and mobile programs, and security for electronic commerce. 
+  
+  Sample specific topics include: passwords and offline attacks, DES, RSA, DSA, SHA, SSL, CBC, IPSec, SET, DDoS attacks, biometric authentication, PKI, smart cards, S/MIME, privacy on the Web, viruses, security models, wireless security, and sandboxing. 
+
+  The syllabus and course policy for UPenn students are available at this link: https://www.cis.upenn.edu/~sga001/classes/cis551s24/
+
+type: course
+
+award:
+  belt: bunny
+
+modules:
+  - id: software-security
+    name: Software Security
+    description: |
+      Hackers are the modern-day sorcerers of the digital realm. 
+      While you possess hacking skills, there's always room for growth. 
+      
+      Have you delved into the deepest secrets, the esoteric knowledge passed down through generations? 
+      
+      Do you possess the ability to fully manipulate advanced software with state-of-the-art security measures? 
+      
+      Keep advancing into the realm of cybersecurity, utilizing this training ground to enrich your understanding of the mystical knowledge that fuels your digital wizardry.
+    resources:
+    - name: Resources and Guidelines
+      type: markdown
+      content: |
+        - **Control Hijacking:**
+          
+          Before you begin this project, please read "[Smashing the Stack for Fun and Profit](https://cis.upenn.edu/~cis5510/resources/stack-smashing.pdf)".
+        - **GDB:**
+        
+          You will need to make extensive use of the GDB debugger. Useful commands that you may not know are “disassemble”, “info reg”, “x”, and “stepi”. See the built-in GDB help for details, and don’t be afraid to experiment! [This](https://www.cis.upenn.edu/~cis5510/resources/gdb-refcard.pdf) quick reference may also be useful.
+          
+        - **GEF (GDB Enhanced Features):**
+          
+          GEF enhances your debugging experience within GDB by providing additional features and functionalities. It offers a variety of commands and extensions tailored for exploit development and reverse engineering tasks. To get started with GEF, you can refer to the tutorial [here](https://github.com/guyinatuxedo/nightmare/tree/master/modules/02-intro_tooling/gdb-gef).
+        - **pwndbg:**
+          
+          Pwndbg is another GDB enhancement focused on exploit development and reverse engineering. Similar to GEF, it provides various features to streamline the debugging process and analyze binaries effectively. You can find a tutorial on Pwndbg [here](https://tc.gts3.org/cs6265/2020/tut/tut02-warmup2.html).
+        - **Ghidra:**
+          
+          Ghidra is a powerful, open-source software reverse engineering suite developed by the National Security Agency (NSA). It offers a wide range of features for analyzing binaries, including disassembly, decompilation, and scripting capabilities. You can access Ghidra through the GUI session of the dojo infrastructure. To learn more about Ghidra's capabilities and usage, you can explore the tutorial [here](https://github.com/guyinatuxedo/nightmare/tree/master/modules/02-intro_tooling/ghidra)
+        - **pwntools:**
+          
+          pwntools is a Python library designed for exploit development and binary manipulation. It simplifies the process of interacting with binaries and facilitates the creation of exploits. You can find tutorials and documentation for pwntools [here](https://gist.github.com/anvbis/64907e4f90974c4bdd930baeb705dedf).
+        
+        The dojo infrastructure has already installed these tools, with GEF and pwndbg located in `/opt/pwn.college`, Ghidra, IDA, and Binary Ninja available in the GUI session for exploration, and pwntools accessible for Python scripting.
+        
+        To switch from GDB to either GEF or pwndbg, you can execute one of the following commands: `echo "source /opt/gef/gef.py" > ~/.gdbinit` or `echo "source /opt/pwndbg/gdbinit.py" > ~/.gdbinit`
+        
+        Feel free to utilize these tools according to your debugging and reverse engineering requirements, and don't hesitate to experiment and explore their functionalities further.
+    challenges:
+    - id: level-1
+      name: level1
+      description: Overwrite a buffer on the stack to set the right conditions to obtain the flag!
+    - id: level-2
+      name: level2
+      description: Overflow a buffer and smash the stack to obtain the flag!
+    - id: level-3
+      name: level3
+      description: Write a full exploit involving shellcode and a method of tricking the challenge into executing it. Try popping a shell with root privilege and cat the flag.
+    - id: level-4
+      name: level4
+      description: Write a full exploit involving shellcode and a method of tricking the challenge into executing it. This time, the inputted data cannot contain some forbidden bytes. What are they? Can you defeat this? 
+    - id: level-5
+      name: level5
+      description: Write a full exploit involving shellcode and a method of tricking the challenge into executing it. Oh, and this time, forget about tampering with the return address...
+    - id: level-6
+      name: level6
+      description: Write a full exploit involving shellcode and a method of tricking the challenge into executing it. We've implemented some mitigations that ensure the binary is perfectly secure (!?). Can you channel your inner hacker and get the flag like a real pro?
+    - id: level-7
+      name: level7
+      description: Xi quach
